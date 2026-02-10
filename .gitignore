@@ -20,8 +20,5 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 
-# Prisma
-prisma/migrations/
-
 # Docker
 docker/data/
