@@ -13,8 +13,14 @@ export class AuthService {
       throw ApiError.unauthorized("Invalid email or password");
     }
 
-    const accessTokenOpts: SignOptions = { expiresIn: env.JWT_EXPIRES_IN as SignOptions["expiresIn"] };
-    const accessToken = jwt.sign({ userId: user.id, role: user.role }, env.JWT_SECRET, accessTokenOpts);
+    const accessTokenOpts: SignOptions = {
+      expiresIn: env.JWT_EXPIRES_IN as SignOptions["expiresIn"],
+    };
+    const accessToken = jwt.sign(
+      { userId: user.id, role: user.role },
+      env.JWT_SECRET,
+      accessTokenOpts,
+    );
 
     const refreshTokenOpts: SignOptions = { expiresIn: "7d" as SignOptions["expiresIn"] };
     const refreshToken = jwt.sign({ userId: user.id }, env.JWT_REFRESH_SECRET, refreshTokenOpts);
