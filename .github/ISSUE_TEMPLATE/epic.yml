@@ -1,0 +1,63 @@
+name: Epic
+description: A strategic initiative spanning multiple stories
+labels: ["epic"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem exists today? Why does this matter?
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal / Objective
+      description: What outcome are we pursuing? Link to business goals if applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & Boundaries
+      description: What is in scope? What is explicitly out of scope?
+      value: |
+        **In scope:**
+        -
+
+        **Out of scope:**
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: success-metrics
+    attributes:
+      label: Success Metrics
+      description: How will we measure impact? Use quantifiable measures where possible.
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: High-level, outcome-oriented conditions that indicate the epic is complete. Not feature specs — those belong in stories.
+      value: |
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: stories
+    attributes:
+      label: Stories
+      description: Decompose into user-facing deliverables (link as sub-issues after creation).
+      value: |
+        _Create stories as sub-issues of this epic._
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Dependencies & Risks
+      description: What needs to happen first? What could go wrong? What is still unknown?

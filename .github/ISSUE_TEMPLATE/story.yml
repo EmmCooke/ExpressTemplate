@@ -1,0 +1,49 @@
+name: Story
+description: A user-facing deliverable completable within a single sprint
+labels: ["story"]
+body:
+  - type: input
+    id: parent-epic
+    attributes:
+      label: Parent Epic
+      description: "Link to the parent epic (e.g., #12)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: "As a [specific role], I want [goal], so that [reason]. Skip this format for bugs, chores, or technical work — just describe the need directly."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: "Specific, testable conditions (3-5). Each should be independently verifiable with a clear pass/fail. Describe WHAT the user sees, not HOW to build it."
+      value: |
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: design-notes
+    attributes:
+      label: Design / UX Notes
+      description: Links to mockups, wireframes, or brief design guidance. Attach files separately.
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of Scope
+      description: What this story explicitly does NOT cover.
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      description: Break into implementation steps (link as sub-issues after creation).
+      value: |
+        _Create tasks as sub-issues of this story._

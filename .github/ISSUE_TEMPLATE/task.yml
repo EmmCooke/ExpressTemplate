@@ -1,0 +1,34 @@
+name: Task
+description: A concrete implementation step completable in a single day
+labels: ["task"]
+body:
+  - type: input
+    id: parent-story
+    attributes:
+      label: Parent Story
+      description: "Link to the parent story (e.g., #15)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why does this task exist? How does it fit into the parent story? A developer picking this up cold should understand the purpose.
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: Implementation Notes
+      description: Technical guidance — relevant files, patterns to follow, constraints, gotchas. Not step-by-step instructions.
+
+  - type: textarea
+    id: done-when
+    attributes:
+      label: Done When
+      description: "A clear, binary statement: this task is done when..."
+      placeholder: "Done when: ..."
+    validations:
+      required: true
