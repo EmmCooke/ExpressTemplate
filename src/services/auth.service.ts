@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt, { type SignOptions } from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { env } from "../config/env.js";
 import { UserRepository } from "../repositories/user.repository.js";
@@ -13,15 +13,11 @@ export class AuthService {
       throw ApiError.unauthorized("Invalid email or password");
     }
 
-    const accessToken = jwt.sign(
-      { userId: user.id, role: user.role },
-      env.JWT_SECRET,
-      { expiresIn: env.JWT_EXPIRES_IN },
-    );
+    const accessTokenOpts: SignOptions = { expiresIn: env.JWT_EXPIRES_IN as SignOptions["expiresIn"] };
+    const accessToken = jwt.sign({ userId: user.id, role: user.role }, env.JWT_SECRET, accessTokenOpts);
 
-    const refreshToken = jwt.sign({ userId: user.id }, env.JWT_REFRESH_SECRET, {
-      expiresIn: "7d",
-    });
+    const refreshTokenOpts: SignOptions = { expiresIn: "7d" as SignOptions["expiresIn"] };
+    const refreshToken = jwt.sign({ userId: user.id }, env.JWT_REFRESH_SECRET, refreshTokenOpts);
 
     return {
       accessToken,

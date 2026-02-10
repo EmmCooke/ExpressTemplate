@@ -15,7 +15,7 @@ export class UserController {
   });
 
   getUserById = asyncHandler(async (req: Request, res: Response) => {
-    const user = await userService.findById(req.params.id);
+    const user = await userService.findById(req.params.id as string);
     res.json({ success: true, data: user });
   });
 
@@ -25,12 +25,12 @@ export class UserController {
   });
 
   updateUser = asyncHandler(async (req: Request, res: Response) => {
-    const user = await userService.update(req.params.id, req.body);
+    const user = await userService.update(req.params.id as string, req.body);
     res.json({ success: true, data: user });
   });
 
   deleteUser = asyncHandler(async (req: Request, res: Response) => {
-    await userService.delete(req.params.id);
+    await userService.delete(req.params.id as string);
     res.status(204).send();
   });
 }

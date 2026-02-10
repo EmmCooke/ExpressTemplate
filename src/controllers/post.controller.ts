@@ -15,7 +15,7 @@ export class PostController {
   });
 
   getPostById = asyncHandler(async (req: Request, res: Response) => {
-    const post = await postService.findById(req.params.id);
+    const post = await postService.findById(req.params.id as string);
     res.json({ success: true, data: post });
   });
 
@@ -25,12 +25,12 @@ export class PostController {
   });
 
   updatePost = asyncHandler(async (req: Request, res: Response) => {
-    const post = await postService.update(req.params.id, req.body);
+    const post = await postService.update(req.params.id as string, req.body);
     res.json({ success: true, data: post });
   });
 
   deletePost = asyncHandler(async (req: Request, res: Response) => {
-    await postService.delete(req.params.id);
+    await postService.delete(req.params.id as string);
     res.status(204).send();
   });
 }
