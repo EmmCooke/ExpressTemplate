@@ -6,7 +6,7 @@ export class EmailService {
     logger.info({ to, name }, "Sending welcome email");
   }
 
-  async sendPasswordResetEmail(to: string, resetToken: string): Promise<void> {
+  async sendPasswordResetEmail(to: string, _resetToken: string): Promise<void> {
     logger.info({ to, resetToken: "***" }, "Sending password reset email");
   }
 }
