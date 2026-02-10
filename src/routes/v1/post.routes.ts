@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { PostController } from "../../controllers/post.controller";
-import { authenticate } from "../../middleware/authenticate";
-import { validate } from "../../middleware/validate";
-import { createPostSchema, updatePostSchema } from "../../validators/post.validator";
-import { paginationSchema } from "../../validators/common.validator";
+import { PostController } from "../../controllers/post.controller.js";
+import { authenticate } from "../../middleware/authenticate.js";
+import { validate } from "../../middleware/validate.js";
+import { createPostSchema, updatePostSchema } from "../../validators/post.validator.js";
+import { paginationSchema } from "../../validators/common.validator.js";
 
 const router = Router();
 const controller = new PostController();

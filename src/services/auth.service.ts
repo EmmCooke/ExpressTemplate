@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { env } from "../config/env";
-import { UserRepository } from "../repositories/user.repository";
-import { ApiError } from "../utils/ApiError";
+import { env } from "../config/env.js";
+import { UserRepository } from "../repositories/user.repository.js";
+import { ApiError } from "../utils/ApiError.js";
 
 const userRepo = new UserRepository();
 

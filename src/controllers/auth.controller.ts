@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { AuthService } from "../services/auth.service";
-import { asyncHandler } from "../utils/asyncHandler";
+import { AuthService } from "../services/auth.service.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 const authService = new AuthService();
 

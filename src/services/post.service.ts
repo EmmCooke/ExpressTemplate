@@ -1,4 +1,4 @@
-import { PostRepository } from "../repositories/post.repository";
+import { PostRepository } from "../repositories/post.repository.js";
 
 const postRepo = new PostRepository();
 

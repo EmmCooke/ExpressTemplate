@@ -1,9 +1,10 @@
 import { beforeAll, afterAll } from "vitest";
+import { prisma } from "../../src/config/database";
 
 beforeAll(async () => {
-  // Global test setup (e.g., seed test database)
+  await prisma.$connect();
 });
 
 afterAll(async () => {
-  // Global test teardown (e.g., disconnect database)
+  await prisma.$disconnect();
 });

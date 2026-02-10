@@ -1,4 +1,4 @@
-import { logger } from "../config/logger";
+import { logger } from "../config/logger.js";
 
 export class EmailService {
   async sendWelcomeEmail(to: string, name: string): Promise<void> {

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { env } from "../config/env";
-import { ApiError } from "../utils/ApiError";
+import { env } from "../config/env.js";
+import { ApiError } from "../utils/ApiError.js";
 
 export function authenticate(req: Request, _res: Response, next: NextFunction): void {
   const header = req.headers.authorization;

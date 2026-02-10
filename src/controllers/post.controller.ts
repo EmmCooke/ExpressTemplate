@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { PostService } from "../services/post.service";
-import { asyncHandler } from "../utils/asyncHandler";
+import { PostService } from "../services/post.service.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 const postService = new PostService();
 

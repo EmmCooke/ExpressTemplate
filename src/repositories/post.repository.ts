@@ -1,5 +1,5 @@
-import { prisma } from "../config/database";
-import { ApiError } from "../utils/ApiError";
+import { prisma } from "../config/database.js";
+import { ApiError } from "../utils/ApiError.js";
 
 export class PostRepository {
   async findAll(params: { page: number; limit: number }) {

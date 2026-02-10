@@ -3,11 +3,11 @@ import helmet from "helmet";
 import cors from "cors";
 import compression from "compression";
 import { pinoHttp } from "pino-http";
-import { rateLimiter } from "./middleware/rateLimiter";
-import { routes } from "./routes";
-import { notFoundHandler } from "./middleware/notFound";
-import { errorHandler } from "./middleware/errorHandler";
-import { env } from "./config/env";
+import { rateLimiter } from "./middleware/rateLimiter.js";
+import { routes } from "./routes/index.js";
+import { notFoundHandler } from "./middleware/notFound.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+import { env } from "./config/env.js";
 
 const app = express();
 
